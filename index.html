@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selamat Menonton Sayang</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.wrap{
+  position:relative;
+  width:100%;
+  max-width:720px;
+}
+video{
+  width:100%;
+  border-radius:10px;
+}
+/* layer klik transparan */
+#clickLayer{
+  position:absolute;
+  inset:0;
+  z-index:5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+  <video id="vid" controls playsinline preload="metadata">
+    <source src="https://cdn.videy.co/pnFlSdvt1.mp4" type="video/mp4">
+  </video>
+  <div id="clickLayer"></div>
+</div>
+
+<script>
+const adUrl = "https://s.shopee.co.id/5L4wuJqb2U";
+const layer = document.getElementById("clickLayer");
+const video = document.getElementById("vid");
+
+layer.addEventListener("click", function(){
+  // buka iklan (aman untuk TG/WA/FB)
+  window.open(adUrl, "_blank");
+
+  // izinkan video diklik normal setelahnya
+  layer.remove();
+
+  // play video
+  video.play().catch(()=>{});
+});
+</script>
+
+</body>
+</html>
